@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Foodistan</title>
+<style>
+body {
+  background-color: #f9f9f9;
+  font-family: Arial, sans-serif;
+}
+
+header {
+  background-color: #f47a3e;
+  padding: 10px;
+  color: white;
+  text-align: center;
+}
+
+.menu-item {
+  margin: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.menu-item img {
+  width: 100%;
+  border-radius: 5px;
+}
+
+form {
+  margin: 20px auto;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 80%;
+}
+
+footer {
+  text-align: center;
+  background-color: #333;
+  color: white;
+  padding: 10px;
+}
+
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Foodistan</h1>
+  <div>
+    <button onclick="showHome()">Home</button>
+    <button onclick="showMenu()">Menu</button>
+    <button onclick="showAbout()">About</button>
+  </div>
+</header>
+
+<div id="content"></div>
+
+<footer>
+  &copy; 2021 Foodistan
+</footer>
+
+<script>
+function showHome() {
+  document.getElementById('content').innerHTML = `
+    <img src="https://cdn.dribbble.com/users/4913590/screenshots/15283932/media/b430f8df20aa4f1cc96e412c68db44d2.jpg" alt="Foodistan Logo" style="max-width: 100%;">
+    <img src="https://d4t7t8y8xqo0t.cloudfront.net/resized/750X436/restaurant%2F649660%2Frestaurant020220816105121.jpg" alt="Restaurant Image" style="max-width: 100%;">
+  `;
+}
+
+function showMenu() {
+  document.getElementById('content').innerHTML = `
+    
+  <div class="menu-item">
+      <img src="https://littlesunnykitchen.com/wp-content/uploads/Chicke-tikka-masala-2-7.jpg" alt="Butter Chicken">
+      <p><strong>Butter Chicken</strong></p>
+      <p>Description: Delicious Indian creamy chicken dish.</p>
+      <p>Price: $10</p>
+      <button onclick="viewIngredients()">View Ingredients</button>
+      <button onclick="orderRecipe()">Order</button>
+    </div>
+
+    <div class="menu-item">
+      <img src="https://minimalistbaker.com/wp-content/uploads/2018/10/Vegan-Palak-Paneer-SQUARE.jpg" alt="Palak Paneer">
+      <p><strong>Palak Paneer</strong></p>
+      <p>Description: Indian spinach and cottage cheese curry.</p>
+      <p>Price: $8</p>
+      <button onclick="viewIngredients()">View Ingredients</button>
+      <button onclick="orderRecipe()">Order</button>
+    </div>
+
+    <div class="menu-item">
+      <img src="https://assets.limetray.com/assets/user_images/menus/compressed/1636789829_Tandoorichickennew.jpg" alt="Biryani">
+      <p><strong>Biryani</strong></p>
+      <p>Description: Fragrant Indian rice dish with spices and meat.</p>
+      <p>Price: $12</p>
+      <button onclick="viewIngredients()">View Ingredients</button>
+      <button onclick="orderRecipe()">Order</button>
+    </div>
+    
+    <div class="menu-item">
+      <img src="https://thumbs.dreamstime.com/b/chole-bhature-dark-background-served-laccha-onions-pickle-buttermilk-restaurant-style-304060489.jpg" alt="Chole Bhature">
+      <p><strong>Chole Bhature</strong></p>
+      <p>Description: Spicy chickpea curry with fried bread.</p>
+      <p>Price: $8</p>
+      <button onclick="viewIngredients()">View Ingredients</button>
+      <button onclick="orderRecipe()">Order</button>
+    </div>
+  `;
+}
+
+function showAbout() {
+  document.getElementById('content').innerText = 'Welcome to Foodistan! We bring you the best of Indian cuisine.';
+}
+
+function viewIngredients() {
+  alert('Ingredients: chicken, cream, tomato, spices...');
+}
+
+function orderRecipe() {
+  alert('Thank you for your order! Your delicious meal is on its way.');
+}
+
+showHome(); // Display home page by default
+</script>
+
+</body>
+</html>
